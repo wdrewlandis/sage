@@ -55,12 +55,21 @@ function widgets_init() {
   ]);
 
   register_sidebar([
-    'name'          => __('Footer', 'sage'),
-    'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>'
+    'name'          => __('Mini Footer', 'sage'),
+    'id'            => 'sidebar-mini-footer',
+    'before_widget' => '<div class="mdl-mini-footer__left-section">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<div class="mdl-logo">',
+    'after_title'   => '</div>'
+  ]);
+
+  register_sidebar([
+    'name'          => __('Mega Footer', 'sage'),
+    'id'            => 'sidebar-mega-footer',
+    'before_title'  => '<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked><h1 class="mdl-mega-footer__heading">',
+    'after_title'   => '</h1><div class="mdl-mega-footer__link-list">',
+    'before_widget' => '<section class="mdl-mega-footer__drop-down-section">',
+    'after_widget'  => '</div></section>',
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
