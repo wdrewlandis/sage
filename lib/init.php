@@ -66,10 +66,10 @@ function widgets_init() {
   register_sidebar([
     'name'          => __('Mega Footer', 'sage'),
     'id'            => 'sidebar-mega-footer',
-    'before_title'  => '<input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked><h1 class="mdl-mega-footer__heading">',
-    'after_title'   => '</h1>',
-    'before_widget' => '<section class="mdl-mega-footer__drop-down-section">',
-    'after_widget'  => '</section>',
+    'before_title'  => '</div><input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked><h2 class="widget-title mdl-mega-footer--heading">',
+    'after_title'   => '</h2><div class="mdl-mega-footer--link-list">',
+    'before_widget' => '<section class="mdl-mega-footer__drop-down-section"><div>',
+    'after_widget'  => '</div></section>',
   ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
