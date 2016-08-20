@@ -11,6 +11,7 @@ var imagemin     = require('gulp-imagemin');
 var jshint       = require('gulp-jshint');
 var lazypipe     = require('lazypipe');
 var less         = require('gulp-less');
+var loadplugins  = require('gulp-load-plugins')();
 var merge        = require('merge-stream');
 var cssNano      = require('gulp-cssnano');
 var plumber      = require('gulp-plumber');
@@ -285,4 +286,24 @@ gulp.task('wiredep', function() {
 // `gulp` - Run a complete build. To compile for production run `gulp --production`.
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
+});
+
+// ### Zip
+// `gulp zip` - Zip up a distribution of the compiled WordPress theme.
+// Run after doing a build.
+gulp.task('zip', function(callback) {
+  return gulp.src([
+    'dist/**/*',
+    'lang/*',
+    'lib/*',
+    'templates/*',
+    '*.css',
+    '*.md',
+    '*.php',
+    '*.txt'
+  ], {
+    base: '.'
+  })
+    .pipe(loadplugins.zip('sage-mdl.zip'))
+    .pipe(gulp.dest('release'));
 });
