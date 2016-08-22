@@ -1,0 +1,3 @@
+#!/bin/sh
+git remote add upstream https://github.com/roots/sage.git
+git remote add upstream-mdl https://github.com/peiche/sage.git
