@@ -23,7 +23,7 @@ use Roots\Sage\Wrapper;
         <div class="mdl-layout__content" role="document">
           <div class="mdl-grid">
             <?php
-            if (Config\display_sidebar()) :
+            if (Setup\display_sidebar()) :
               $col = 'mdl-cell--8-col';
             else :
               $col = 'mdl-cell--12-col';
@@ -32,7 +32,7 @@ use Roots\Sage\Wrapper;
             <main class="mdl-cell <?php echo $col; ?>" role="main">
               <?php include Wrapper\template_path(); ?>
             </main><!-- main -->
-            <?php if (Config\display_sidebar()) : ?>
+            <?php if (Setup\display_sidebar()) : ?>
               <aside class="mdl-cell mdl-cell--4-col" role="complementary">
                 <?php include Wrapper\sidebar_path(); ?>
               </aside><!-- sidebar -->
