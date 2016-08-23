@@ -5,15 +5,15 @@
   list-style: none;
 }
 .comment-form p {
-  @extend .form-group;
+  @extend .form-group !optional;
 }
 .comment-form input[type="text"],
 .comment-form input[type="email"],
 .comment-form input[type="url"],
 .comment-form textarea {
-  @extend .form-control;
+  @extend .form-control !optional;
 }
 .comment-form input[type="submit"] {
-  @extend .btn;
-  @extend .btn-primary;
+  @extend .btn !optional;
+  @extend .btn-primary !optional;
 }
