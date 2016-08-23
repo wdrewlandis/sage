@@ -95,6 +95,10 @@ function display_sidebar() {
     is_404(),
     is_front_page(),
     is_page_template('template-custom.php'),
+    //No SB on any Page
+    is_page(),
+    //No SB on Product page
+    is_singular('product')
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
